@@ -1,32 +1,32 @@
--- Создание базы данных
+-- РЎРѕР·РґР°РЅРёРµ Р±Р°Р·С‹ РґР°РЅРЅС‹С…
 CREATE DATABASE [Alexander_Dubrovinsky];
 GO
 
--- Использование созданной БД в качестве рабочей
+-- РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРЅРѕР№ Р‘Р” РІ РєР°С‡РµСЃС‚РІРµ СЂР°Р±РѕС‡РµР№
 USE [Alexander_Dubrovinsky];
 GO
 
--- Создание в текущей БД схем sales и persons
+-- РЎРѕР·РґР°РЅРёРµ РІ С‚РµРєСѓС‰РµР№ Р‘Р” СЃС…РµРј sales Рё persons
 CREATE SCHEMA [sales];
 GO
 
 CREATE SCHEMA [persons];
 GO
 
--- Создание таблицы Orders в схеме sales с полем OrderNum типа Int 
+-- РЎРѕР·РґР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ Orders РІ СЃС…РµРјРµ sales СЃ РїРѕР»РµРј OrderNum С‚РёРїР° Int 
 CREATE TABLE [sales].[Orders] ([OrderNum] INT NULL);
 GO
 
--- Создание резервной копии всей базы данных на диске
+-- РЎРѕР·РґР°РЅРёРµ СЂРµР·РµСЂРІРЅРѕР№ РєРѕРїРёРё РІСЃРµР№ Р±Р°Р·С‹ РґР°РЅРЅС‹С… РЅР° РґРёСЃРєРµ
 BACKUP DATABASE [Alexander_Dubrovinsky]
 	TO DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\Alexander_Dubrovinsky.bak';
 GO
 
--- Удаление базы данных
+-- РЈРґР°Р»РµРЅРёРµ Р±Р°Р·С‹ РґР°РЅРЅС‹С…
 DROP DATABASE [Alexander_Dubrovinsky];
 GO
 
--- Восстановление базы данных из резервной
+-- Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р±Р°Р·С‹ РґР°РЅРЅС‹С… РёР· СЂРµР·РµСЂРІРЅРѕР№
 RESTORE DATABASE [Alexander_Dubrovinsky]
 	FROM DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\Alexander_Dubrovinsky.bak';
 GO
