@@ -97,7 +97,7 @@ GO
 SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 GO
 
--- Удалить ограничение 
+-- Удалить ограничение
 
 ALTER TABLE dbo.PersonPhone
 	DROP CONSTRAINT PhoneNumber_Value;
@@ -107,6 +107,12 @@ GO
 
 ALTER TABLE dbo.PersonPhone
 	DROP CONSTRAINT PhoneNumberTypeID_Default;
+GO
+
+-- Удалить поле ID
+
+ALTER TABLE dbo.PersonPhone
+	DROP COLUMN ID;
 GO
 
 --f) удалите таблицу dbo.PersonPhone.
